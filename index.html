@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iCal Builder — RFC 5545 ICS File Builder</title>
+  <meta name="description" content="iCal/ICS file builder conforming to RFC 5545 with recurrence rules, alarms, and live preview. Zero dependencies." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="app-header">
+  <span class="app-header__logo">📅 iCal Builder</span>
+  <span class="app-header__subtitle" data-i18n="appSubtitle"></span>
+  <div class="app-header__spacer"></div>
+  <div class="app-header__actions">
+    <button id="btn-lang" class="btn btn--ghost btn--small">EN</button>
+    <button id="btn-theme" class="btn btn--ghost btn--small" data-i18n="darkMode"></button>
+    <button id="btn-download" class="btn btn--primary" data-i18n="downloadICS"></button>
+  </div>
+</header>
+
+<div class="app-body">
+  <!-- LEFT: Form Panel -->
+  <div class="panel panel--left">
+
+    <!-- Calendar name -->
+    <div class="calendar-row">
+      <label for="cal-name" data-i18n="calendarName"></label>
+      <input id="cal-name" type="text" data-i18n-placeholder="calendarName" />
+    </div>
+
+    <!-- Events -->
+    <div class="events-toolbar">
+      <span class="section-title" data-i18n="addEvent"></span>
+      <button id="btn-add-event" class="btn btn--primary btn--small" data-i18n="addEvent"></button>
+    </div>
+
+    <div id="events-container"></div>
+
+    <!-- Upload / Paste ICS -->
+    <div class="upload-section">
+      <div class="section-title" data-i18n="uploadICS"></div>
+      <div id="drop-zone" class="drop-zone">
+        <p class="drop-zone__hint">Drag & drop .ics file here or <label for="file-input">browse</label></p>
+        <input id="file-input" type="file" accept=".ics,text/calendar" />
+      </div>
+      <textarea
+        id="paste-area"
+        rows="5"
+        data-i18n-placeholder="pasteICS"
+      ></textarea>
+      <button id="btn-parse" class="btn btn--ghost" style="margin-top:8px" data-i18n="parseICS"></button>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: Preview Panel -->
+  <div class="panel panel--right">
+    <div class="preview-header">
+      <span class="preview-title" data-i18n="livePreview"></span>
+      <button id="btn-copy" class="btn btn--ghost btn--small" data-i18n="copyToClipboard"></button>
+    </div>
+    <pre id="ics-preview"></pre>
+  </div>
+</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
