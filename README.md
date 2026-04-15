@@ -97,3 +97,10 @@ const calendar = parseICS(icsString);
 ## License
 
 MIT © 2026 [SEN LLC (SEN 合同会社)](https://sen.ltd)
+
+<!-- sen-publish:links -->
+## Links
+
+- 🌐 Demo: https://sen.ltd/portfolio/ical-builder/
+- 📝 dev.to: https://dev.to/sendotltd/building-an-rfc-5545-ical-file-generator-line-folding-escaping-and-all-5fid
+<!-- /sen-publish:links -->
